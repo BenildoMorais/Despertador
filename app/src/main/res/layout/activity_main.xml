@@ -4,8 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:layout_width="207dp"
+        android:layout_height="213dp"
+        android:background="@drawable/Clock"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Horas"
+            android:inputType="number"
+            android:layout_marginHorizontal="20px"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Minutos"
+            android:inputType="number"
+            android:layout_marginHorizontal="20px"
+            />
+
+    </LinearLayout>
+
+        <EditText
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:hint="Mensagem"
+           android:textAlignment="center"
+            />
+
+    <Button
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:text="Activar"
+        />
 
 
 </LinearLayout>
