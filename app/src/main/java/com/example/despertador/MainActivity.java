@@ -6,12 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.despertador.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    String message;
+    int hour;
+    int minutes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +26,14 @@ public class MainActivity extends AppCompatActivity {
         binding.ativar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = binding.message.getText().toString();
-                int hour = Integer.parseInt(binding.hour.getText().toString());
-                int minutes = Integer.parseInt(binding.minutes.getText().toString());
+
+                try {
+                    message = binding.message.getText().toString();
+                    hour = Integer.parseInt(binding.hour.getText().toString());
+                    minutes = Integer.parseInt(binding.minutes.getText().toString());
+                }catch (java.lang.NumberFormatException e){
+                    Toast.makeText(MainActivity.this, "Os campos Hora e minutos são obrigatorios", Toast.LENGTH_SHORT).show();
+                }
 
                 createAlarm(message,hour,minutes);
             }
